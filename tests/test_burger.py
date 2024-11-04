@@ -43,6 +43,5 @@ class TestBurger:
         burger.add_ingredient(Ingredient(INGREDIENT_TYPE_FILLING,"hot sauce", 100))
         burger.add_ingredient(Ingredient(INGREDIENT_TYPE_FILLING, "cutlet", 100))
         receipt = burger.get_receipt()
-        assert Bun.get_name(Bun("black bun", 100)) in receipt
-        assert Ingredient.get_name(Ingredient(INGREDIENT_TYPE_FILLING,"hot sauce", 100)) in receipt
-        assert str(Burger.get_price(burger)) in receipt
+        assert receipt == "(==== black bun ====)\n= filling hot sauce =\n= filling cutlet =\n(==== black bun ====)\n\nPrice: 400"
+
